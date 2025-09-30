@@ -7,7 +7,7 @@ class MyEventEmitter {
 
   on(eventName, callback) {
     if (typeof callback !== 'function') {
-      throw new Error('is not a function to match expected behavior.');
+      throw new TypeError('listener must be a function');
     }
 
     if (!this.listeners[eventName]) {
@@ -20,7 +20,7 @@ class MyEventEmitter {
 
   once(eventName, callback) {
     if (typeof callback !== 'function') {
-      throw new Error('is not a function to match expected behavior.');
+      throw new TypeError('listener must be a function');
     }
 
     if (!this.listeners[eventName]) {
@@ -68,7 +68,7 @@ class MyEventEmitter {
   }
   prependListener(eventName, callback) {
     if (typeof callback !== 'function') {
-      throw new Error('is not a function to match expected behavior.');
+      throw new TypeError('listener must be a function');
     }
 
     if (!this.listeners[eventName]) {
@@ -80,7 +80,7 @@ class MyEventEmitter {
   }
   prependOnceListener(eventName, callback) {
     if (typeof callback !== 'function') {
-      throw new Error('is not a function to match expected behavior.');
+      throw new TypeError('listener must be a function');
     }
 
     if (!this.listeners[eventName]) {
